@@ -1,0 +1,185 @@
+*{
+    font-family: Montserrat;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(10vh, auto);
+    
+    width: 95vw;
+    height: 95vh;
+    background-color: rgb(122, 228, 74);
+    
+}
+
+.header{
+    grid-column: 1/5;
+    grid-row:1;
+    height:15vh;
+    display: flex;
+    background-color: rgb(122, 228, 74);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+   
+}
+.header p{
+     font-size: 3em;
+    animation: textMovesLeft 10000ms ease-in 100ms infinite forwards;
+    
+    
+}
+.letterX{
+    color:red;
+    font-weight: 600;
+    
+    
+    
+}
+.header button{
+    width:5vh;
+    height:5vh;
+    font-weight: 900;
+    font-size: 4vh;
+    padding:1px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgb(122, 228, 74);
+    transition: color 1000ms, border 2000ms;
+}
+.header button:hover{
+    
+    color:red;
+    border: 2px solid red;
+   
+}
+.threeDoors{
+    grid-column: 1/4;
+    grid-row: 2;
+    height:65vh;
+    background-color: rgb(9, 120, 218);
+    display: flex;
+    justify-content: space-evenly;
+}
+.doors, .dropzones{
+    margin: 5px;
+    width:30%;
+    text-align: center;
+    color:rgba(255, 255, 255, 0.342);
+    /*background-color: rgba(102, 51, 153, 0.397);*/
+    }
+.doors>img{
+    width:100%;
+    
+}
+.dropzones{
+    border:3px dashed rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+}   
+.active-dropzone{
+    background-color: greenyellow;
+}
+
+.scoreTable{
+    grid-column: 4/5;
+    grid-row: 2/3;
+    height:80vh;
+    background-color: #dab409;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+.scores{
+    background-color: rgba(102, 51, 153, 0.397);
+}
+
+.selectionArea{
+    grid-column: 1/4;
+    grid-row: 3;
+    height:15vh;
+    background-color: rgb(143, 10, 114);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modal-bg{
+    position: fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    background-color: rgba(0,0,0,0.7);
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity:0;
+    transition: visibility 0s, opacity 500ms;
+}
+.modal-active{
+    visibility: visible;
+    filter: blur(1px);
+    opacity:1;
+}
+.modal{
+    border-radius: 20px;
+    
+    background-color: ivory;
+    background:linear-gradient(-59deg, rgb(206, 41, 41) 50%,rgb(43, 133, 43) 50%);
+    width: 20%;
+    height: 20%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+
+
+}
+.modal.modaltext{
+    /*nem mukodik rendesen!!! utolag visszaterni erresiss*/
+    display:flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+
+.winnerPrize{
+    background-color: lightcoral;
+
+
+}
+
+
+@keyframes textMovesLeft{
+    0%{transform: translateX(350%)}
+    100%{transform: translateX(-200%)}
+}
+
+.test{
+    width: 1em;
+    height: 1em;
+    border:1px solid black;
+    border-radius: 0.5rem;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-fill-mode: both;
+    display:flex;
+    align-items: center;
+    justify-content: center
+;
+}
+@keyframes spin {
+    from {
+        transform:rotateY(0deg) rotateX(0deg);
+
+    }
+    to {
+        transform:rotateY(-180deg) rotateX(-180deg);
+    }
+}
